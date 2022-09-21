@@ -24,7 +24,7 @@ import {
 } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import Home from "./pages/Home";
-import { home, menu } from "ionicons/icons";
+import { addCircleOutline, home, menu } from "ionicons/icons";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -45,6 +45,7 @@ import "@ionic/react/css/display.css";
 /* Theme variables */
 import "./theme/variables.css";
 import Menu from "./pages/Menu";
+import Form from "./pages/Form";
 
 setupIonicReact();
 
@@ -80,6 +81,9 @@ const App: React.FC = () => (
               <Route path="/home">
                 <Home />
               </Route>
+              <Route path="/form">
+                <Form />
+              </Route>
               <Route exact path="/">
                 <Redirect to="/menu" />
               </Route>
@@ -92,6 +96,10 @@ const App: React.FC = () => (
               <IonTabButton tab="menu" href="/menu">
                 <IonIcon icon={menu} />
                 <IonLabel>Menu</IonLabel>
+              </IonTabButton>
+              <IonTabButton tab="form" href="/form">
+                <IonIcon icon={addCircleOutline} />
+                <IonLabel>Add Recipe</IonLabel>
               </IonTabButton>
             </IonTabBar>
           </IonTabs>
