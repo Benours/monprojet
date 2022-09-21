@@ -46,6 +46,7 @@ import "@ionic/react/css/display.css";
 import "./theme/variables.css";
 import Menu from "./pages/Menu";
 import Form from "./pages/Form";
+import List from "./pages/List";
 
 setupIonicReact();
 
@@ -83,6 +84,9 @@ const App: React.FC = () => (
               </Route>
               <Route path="/form">
                 <Form />
+              </Route>
+              <Route path="/List">
+                <List />
               </Route>
               <Route exact path="/">
                 <Redirect to="/menu" />
