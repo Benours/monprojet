@@ -9,6 +9,7 @@ import {
   IonList,
   IonPage,
 } from "@ionic/react";
+import { Preferences } from "@capacitor/preferences";
 import { close } from "ionicons/icons";
 import { useState } from "react";
 import { Plat } from "../schema/Plat";
@@ -54,6 +55,11 @@ const List: React.FC = () => {
     },
   ]);
 
+  const checkName = async () => {
+    const { value } = await Preferences.get({ key: "Ingredients" });
+    console.log(value);
+  };
+
   const compareName = (platA: Plat, platB: Plat) => {
     if (platA.namePlate.toLowerCase() < platB.namePlate.toLowerCase())
       return -1;
@@ -66,6 +72,8 @@ const List: React.FC = () => {
     if (platA.nameCity.toLowerCase() > platB.nameCity.toLowerCase()) return 1;
     return 0;
   };
+
+  checkName();
 
   return (
     <IonPage>
