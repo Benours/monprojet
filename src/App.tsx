@@ -85,7 +85,7 @@ const App: React.FC = () => (
               <Route path="/form">
                 <Form />
               </Route>
-              <Route path="/List">
+              <Route path="/list">
                 <List />
               </Route>
               <Route exact path="/">

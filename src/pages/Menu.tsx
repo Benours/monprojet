@@ -53,7 +53,7 @@ const Menu: React.FC = () => {
         >
           Click Me
         </IonButton>
-        <IonButton href="/List">List</IonButton>
+        <IonButton href="/list">List</IonButton>
       </IonContent>
     </IonPage>
   );

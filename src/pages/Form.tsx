@@ -21,10 +21,11 @@ const Form: React.FC = () => {
   const [country, setCountry] = useState<string>();
 
   const setPlate = () => {
-    Preferences.set({
-      key: "Ingredients",
-      value: JSON.stringify(form),
-    });
+    if (form?.namePlate !== undefined)
+      Preferences.set({
+        key: JSON.stringify(form?.namePlate),
+        value: JSON.stringify(form),
+      });
   };
 
   useEffect(setPlate, [form]);
@@ -73,6 +74,7 @@ const Form: React.FC = () => {
             nameCity: country!,
           });
         }}
+        href="/menu"
       >
         submit
       </IonButton>
